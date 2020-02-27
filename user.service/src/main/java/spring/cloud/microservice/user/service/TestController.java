@@ -16,9 +16,9 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("api/test")
 @Log4j2
-public class UserController {
+public class TestController {
 
     @Autowired
     private Environment environment;
@@ -28,6 +28,14 @@ public class UserController {
 
     @Autowired
     private DiscoveryClient discoveryClient;
+
+
+
+    @GetMapping(path = "/status/check2")
+    public ResponseEntity<String> statusString() {
+
+        return ResponseEntity.ok().body("working on port " + environment.getProperty("local.server.port"));
+    }
 
     @GetMapping(path = "/status/check")
     public ResponseEntity<Object> status() {
