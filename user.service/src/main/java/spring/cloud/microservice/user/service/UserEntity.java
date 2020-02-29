@@ -3,6 +3,7 @@ package spring.cloud.microservice.user.service;
 
 import lombok.Getter;
 import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -13,11 +14,8 @@ import java.io.Serializable;
 public class UserEntity implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
-    @Column(name = "user_id", nullable = false, length = 100,  unique = true)
-    private String userId;
 
     @Column(name = "first_name", nullable = false, length = 50)
     private String firstName;
