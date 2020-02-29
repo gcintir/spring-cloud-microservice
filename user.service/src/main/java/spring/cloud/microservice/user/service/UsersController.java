@@ -34,4 +34,10 @@ public class UsersController {
         return new ResponseEntity<>(userService.getUser(userId), HttpStatus.OK);
     }
 
+    @GetMapping(path = "/status")
+    public ResponseEntity<String> statusString() {
+
+        return ResponseEntity.ok().body("running");
+    }
+
 }
