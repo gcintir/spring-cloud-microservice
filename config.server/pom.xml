@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>spring.cloud.microservice</groupId>
-	<artifactId>account.service</artifactId>
+	<artifactId>config.server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>account.service</name>
-	<description>Account Service project</description>
+	<name>config.server</name>
+	<description>Spring Cloud Config Server project</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -23,6 +23,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -55,10 +59,6 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 	</dependencies>
 
